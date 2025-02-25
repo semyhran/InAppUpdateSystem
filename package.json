@@ -1,0 +1,13 @@
+{
+    "name": "com.yourname.inappupdatesystem",
+    "version": "1.0.0",
+    "displayName": "In-App Update System",
+    "unity": "2020.3",
+    "description": "A Unity package for handling in-app updates on Android.",
+    "repository": "https://github.com/semyhran/InAppUpdateSystem.git",
+    "author": {
+      "name": "Anton Semyhran",
+      "email": "semigran@me.com"
+    }
+  }
+  
