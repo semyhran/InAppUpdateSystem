@@ -32,6 +32,10 @@ namespace InAppUpdateSystem
 
         public IEnumerator CheckForUpdate(int remoteConfigValue = 0)
         {
+#if UNITY_EDITOR
+            yield break;
+#endif
+
             appUpdateManager = new AppUpdateManager();
             // Request update info from Play Store
             PlayAsyncOperation<AppUpdateInfo, AppUpdateErrorCode> appUpdateInfoOperation = appUpdateManager.GetAppUpdateInfo();
