@@ -1,0 +1,18 @@
+{
+    "name": "InAppUpdateSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a3608d6c771df4d5ea920975c31d3a5f",
+        "GUID:b649415412a3d4e8a83df256b07478bb",
+        "GUID:b4318b6f3695442c4983c360248781db"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
