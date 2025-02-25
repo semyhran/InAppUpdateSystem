@@ -1,7 +1,7 @@
 {
-    "name": "com.yourname.inappupdatesystem",
+    "name": "com.nomad.inappupdatesystem",
     "version": "1.0.0",
-    "displayName": "In-App Update System",
+    "displayName": "InAppUpdate System",
     "unity": "2020.3",
     "description": "A Unity package for handling in-app updates on Android.",
     "repository": "https://github.com/semyhran/InAppUpdateSystem.git",
