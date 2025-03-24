@@ -9,13 +9,8 @@ namespace InAppUpdateSystem
 {
     public class InAppUpdateManager : MonoBehaviour
     {
-#if UNITY_ANDROID
-        // Manager for in-app update operations
-        private AppUpdateManager appUpdateManager;
-
-        // Singleton instance
-        public static InAppUpdateManager Instance;
-
+        // Singleton instance, accessible on all platforms
+        public static InAppUpdateManager Instance { get; private set; }
 
         private void Awake()
         {
@@ -30,18 +25,28 @@ namespace InAppUpdateSystem
             }
         }
 
+        // It called for all platforms for easier use, but returns immediately on platforms other than Android.
         public IEnumerator CheckForUpdate(int remoteConfigValue = 0)
         {
-#if UNITY_EDITOR
+#if UNITY_EDITOR || !UNITY_ANDROID || UNITY_IOS
             yield break;
+#else
+            yield return AndroidCheckForUpdate(remoteConfigValue);
 #endif
+        }
 
+#if UNITY_ANDROID
+        // Manager for in-app update operations
+        private AppUpdateManager appUpdateManager;
+
+        // Internal function for Android update
+        private IEnumerator AndroidCheckForUpdate(int remoteConfigValue)
+        {
             appUpdateManager = new AppUpdateManager();
             // Request update info from Play Store
             PlayAsyncOperation<AppUpdateInfo, AppUpdateErrorCode> appUpdateInfoOperation = appUpdateManager.GetAppUpdateInfo();
 
             yield return appUpdateInfoOperation;
-
 
             if (appUpdateInfoOperation.IsSuccessful)
             {
