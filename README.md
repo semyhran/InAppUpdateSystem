@@ -21,7 +21,7 @@ A simple in-app update management system for Android apps in Unity projects. The
 
 ### Basic Usage
 
-Add the `InAppUpdateManager` prefab to your scene or instantiate it programmatically. Then call with an update priority value:
+Add the InAppUpdateManager prefab to your scene from the package folder, instantiate it programmatically, or create it yourself by adding InAppUpdateManager to a GameObject. Then call it with an update priority value:
 
 ```csharp
 // Get priority from Firebase Remote Config or other source
